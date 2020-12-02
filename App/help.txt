@@ -1,0 +1,3 @@
+Welcome to Group D's (is that right?) Inventory Management System.
+Interact with the system by clicking on the appropraite buttons.
+A separate window will open if you need to enter in information.
