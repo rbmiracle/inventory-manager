@@ -35,27 +35,27 @@ def displayHelp():
 
 
 def displayProduct(prod_id):
-    product = "Product Details:\n"+FV._print_product(id_selection=prod_id)
+    product = "Product Details:\n"+FV.print_product(id_selection=prod_id)
     appendTextInput(product)
 
 
 def updateProduct(prod_id):
-    is_found, prod_index = FV._product_id_in_inventory(prod_id)
+    is_found, prod_index = FV.product_id_in_inventory(prod_id)
     if is_found:
         update_window = Toplevel(root)
         update_window.title("Update Product")
         update_window.geometry("400x350+512+512")
-        label_update = Label(update_window, text="Enter new information for %s" % FV._get_item_attribute(prod_index, 0))
+        label_update = Label(update_window, text="Enter new information for %s" % FV.get_item_attribute(prod_index, 0))
         label_update.pack(pady=10)
 
         frame_display = Frame(update_window, bd=1, relief=GROOVE)
-        id_string = StringVar(value=FV._get_item_attribute(prod_index, 0))
-        man_string = StringVar(value=FV._get_item_attribute(prod_index, 1))
-        name_string = StringVar(value=FV._get_item_attribute(prod_index, 2))
-        cost_string = StringVar(value=FV._get_item_attribute(prod_index, 3))
-        price_string = StringVar(value=FV._get_item_attribute(prod_index, 4))
-        quantity_string = StringVar(value=FV._get_item_attribute(prod_index, 5))
-        sku_string = StringVar(value=FV._get_item_attribute(prod_index, 6))
+        id_string = StringVar(value=FV.get_item_attribute(prod_index, 0))
+        man_string = StringVar(value=FV.get_item_attribute(prod_index, 1))
+        name_string = StringVar(value=FV.get_item_attribute(prod_index, 2))
+        cost_string = StringVar(value=FV.get_item_attribute(prod_index, 3))
+        price_string = StringVar(value=FV.get_item_attribute(prod_index, 4))
+        quantity_string = StringVar(value=FV.get_item_attribute(prod_index, 5))
+        sku_string = StringVar(value=FV.get_item_attribute(prod_index, 6))
         # Input for ID
         label_id = Label(frame_display, text="ItemID: ")
         entry_id = Entry(frame_display, textvariable=id_string)
@@ -105,14 +105,14 @@ def updateProduct(prod_id):
 
 def submitUpdate(id_selection, new_id, new_manufacturer, new_name, new_cost, new_price,
                  new_quantity_in_stock, new_sku):
-    to_print = "Updated Product: \n" + FV._update_product(id_selection, new_id, new_manufacturer, new_name,
+    to_print = "Updated Product: \n" + FV.update_product(id_selection, new_id, new_manufacturer, new_name,
                                                           new_cost, new_price, new_quantity_in_stock, new_sku)
     appendTextInput(to_print)
 
 
 def submitProduct(product_manufacturer="Default", product_name="Default",
                   product_cost=-1.00, product_price=-1.00, quantity_in_stock=-1, product_sku="000000000"):
-    new_item = "Product Added:\n" + FV._add_product(product_manufacturer, product_name, product_cost, product_price,
+    new_item = "Product Added:\n" + FV.add_product(product_manufacturer, product_name, product_cost, product_price,
                                                     quantity_in_stock, product_sku)
     appendTextInput(new_item)
 
@@ -173,12 +173,12 @@ def addProduct():
 
 
 def deleteProduct(prod_id):
-    to_print = "Product Removed:\n" + FV._remove_product(prod_id)
+    to_print = "Product Removed:\n" + FV.remove_product(prod_id)
     appendTextInput(to_print)
 
 
 def displayInventory():
-    inventory = "Inventory:\n" + FV._print_file()
+    inventory = "Inventory:\n" + FV.print_file()
     setTextInput(inventory)
     print(inventory)
 
