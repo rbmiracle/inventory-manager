@@ -1,4 +1,4 @@
-Group D's Inventory Management System
+~ Group D's Inventory Management System ~
 
 ~~~~~ Main Window ~~~~~
 
