@@ -22,7 +22,7 @@ def clearTextBox():
 
 # Appends what is in text to what is currently in the text box
 def appendTextInput(text):
-    main_text.insert(END, (text + "\n"))
+    main_text.insert(END, ("\n" + text + "\n"))
 
 
 # Clears the text box and then reads in the help file and displays it
