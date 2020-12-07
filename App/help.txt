@@ -1,3 +1,27 @@
-Welcome to Group D's (is that right?) Inventory Management System.
-Interact with the system by clicking on the appropraite buttons.
-A separate window will open if you need to enter in information.
+Group D's Inventory Management System
+
+~~~~~ Main Window ~~~~~
+
+Inventory Button - Click to display the entire inventory.
+Product Button - Click to open a separate window that gives you options to manipulate the inventory.
+Clear Button - Clears the current text.
+Help Button - Displays this start up message again.
+Quit Button - Closes the application
+
+~~~~~ Product Window ~~~~~
+
+Display Product Button - Enter the product ID for a single item in the entry field above the button.
+	The information for that item will be displayed
+Update Product Button - Enter the product ID for an item to update.
+	A new window will open with the current information already entered into the entry fields.
+	Change the information you want to update and click the Update Product button.
+Add New Product Button - Click to open a new window that allows you to enter information.
+	Click the Add Product button to submit. A unique product ID will be generated for you.
+Delete Product - Enter the product ID for a single item to be removed from the inventory.
+	Warning! This is undoable! Double check you are deleting the correct product!
+Close Window Button - Closes the Product Window but does not close the entire application.
+
+~~~~~ Credits ~~~~~
+
+Brandon Miracle - Back End Programmer
+Amber Johnson - Front End Programmer
