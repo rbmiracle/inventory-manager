@@ -213,7 +213,7 @@ class FileView(object):
         # self.get_file()
         # print()
 
-        # get user input for which product ID to view
+        # DEPRECATED UI: get user input for which product ID to view
         # id_selection = input("Which product (ID) would you like to view? ")
         # print()
 
@@ -244,7 +244,7 @@ class FileView(object):
             product_id = int(product.item_id)
         product_id += 1
 
-        # print new ID to terminal, prompt user for product data entry
+        # DEPRECATED UI: prompt user for product data entry ( values for product info)
         print("New Product ID: ", product_id)
         # product_manufacturer = input("Product Manufacturer: ")
         # product_name = input("Product Name: ")
@@ -274,15 +274,13 @@ class FileView(object):
         self.get_file()
         print()
 
-        # initialize product_id_in_inventory to False to open the while loop
-        product_id_in_inventory = False
-
-        # use while loop to get a product ID that is in inventory
-        #while not product_id_in_inventory:
+        # DEPRECATED VALIDATION: while loop to get a product ID that is in inventory
+        # product_id_in_inventory = False
+        # while not product_id_in_inventory:
             # id_selection = input("Which product (ID) would you like to remove? ")
-           # product_id_in_inventory, bag_index = self.product_id_in_inventory(id_selection)
+            # product_id_in_inventory, bag_index = self.product_id_in_inventory(id_selection)
             # print("Selected ID not in Inventory.")
-           # print()
+            # print()
             
         # Added Code on 12/8/2020 - Amber
         if(self.product_id_in_inventory(id_selection)):
@@ -307,19 +305,18 @@ class FileView(object):
         self.get_file()
         print()
 
-        # initialize product_id_in_inventory to False to open the while loop
+        # DEPRECATED VALIDATION: while loop to get a product ID that is in inventory
         # product_id_in_inventory = False
-
-        # use while loop to get a product ID that is in file_contents keys
         # while not product_id_in_inventory:
             # id_selection = input("Which product (ID) would you like to update? ")
             # product_id_in_inventory, bag_index = self.product_id_in_inventory(id_selection)
             # print("Selected ID not in Inventory.")
             # print()
+
         if(self.product_id_in_inventory(id_selection)):
-        # get COPY of selected product from inventory
-        # NOTE: ONLY FOR SEEING PRE-UPDATE PRODUCT INFO
-        # DO NOT PASS THIS PRODUCT FOR REMOVAL FROM INVENTORY
+            # get COPY of selected product from inventory
+            # NOTE: ONLY FOR SEEING PRE-UPDATE PRODUCT INFO
+            # DO NOT PASS THIS PRODUCT FOR REMOVAL FROM INVENTORY
             product_id_in_inventory, bag_index = self.product_id_in_inventory(id_selection)
             product = self.inventory.items.__getitem__(bag_index)
             print()
@@ -327,7 +324,7 @@ class FileView(object):
             self.print_line(product.item_id)
             print()
 
-            # prompt user for product data entry (new values for product info)
+            # DEPRECATED UI: prompt user for product data entry (new values for product info)
             # new_id = input("Product ID: {} >> ".format(product.item_id))
             # new_manufacturer = input("Product Manufacturer: {} >> ".format(product.item_manufacturer))
             # new_name = input("Product Name: {} >> ".format(product.item_name))
