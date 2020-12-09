@@ -278,27 +278,26 @@ class FileView(object):
         product_id_in_inventory = False
 
         # use while loop to get a product ID that is in inventory
-        while not product_id_in_inventory:
+        #while not product_id_in_inventory:
             # id_selection = input("Which product (ID) would you like to remove? ")
-            product_id_in_inventory, bag_index = self.product_id_in_inventory(id_selection)
+           # product_id_in_inventory, bag_index = self.product_id_in_inventory(id_selection)
             # print("Selected ID not in Inventory.")
-            print()
+           # print()
             
         # Added Code on 12/8/2020 - Amber
-        if not product_id_in_inventory:
+        if(self.product_id_in_inventory(id_selection)):
+
+            # print verification of selected product_id
+            print()
+            print("Product Removed:")
+            self.print_line(id_selection)
+            to_return = self.print_line(id_selection)
+            # remove product at bag_index from inventory, push updated inventory to CSVHandler
+            self.inventory.remove(self.inventory.items.__getitem__(bag_index))
+            self.handler.update_file_from_inventory(self.headers, self.inventory)
+            return to_return
+        else:
             return ("Item not in Inventory")
-
-        # print verification of selected product_id
-        print()
-        print("Product Removed:")
-        self.print_line(id_selection)
-        to_return = self.print_line(id_selection)
-        # remove product at bag_index from inventory, push updated inventory to CSVHandler
-        self.inventory.remove(self.inventory.items.__getitem__(bag_index))
-        self.handler.update_file_from_inventory(self.headers, self.inventory)
-        return to_return
-        
-
 
     def update_product(self, id_selection, new_id, new_manufacturer, new_name, new_cost, new_price,
                         new_quantity_in_stock, new_sku):
