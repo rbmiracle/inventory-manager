@@ -283,6 +283,10 @@ class FileView(object):
             product_id_in_inventory, bag_index = self.product_id_in_inventory(id_selection)
             # print("Selected ID not in Inventory.")
             print()
+            
+        # Added Code on 12/8/2020 - Amber
+        if not product_id_in_inventory:
+            return ("Item not in Inventory")
 
         # print verification of selected product_id
         print()
