@@ -286,7 +286,7 @@ class FileView(object):
             
         # Added Code on 12/8/2020 - Amber
         if(self.product_id_in_inventory(id_selection)):
-
+            product_id_in_inventory, bag_index = self.product_id_in_inventory(id_selection)
             # print verification of selected product_id
             print()
             print("Product Removed:")
